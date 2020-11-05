@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     float timer;
     int direction = 1;
     bool broken = true;
+    public AudioClip HitClip;
 
     Animator animator;
     // Start is called before the first frame update
@@ -65,6 +66,7 @@ public class EnemyController : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
+            player.PlaySound(HitClip);
         }
     }
     public void Fix()
